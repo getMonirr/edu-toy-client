@@ -84,7 +84,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-edu-nav ">
+    <div className="bg-edu-nav">
       <div className="navbar justify-between container mx-auto">
         <div className="navbar-start hidden lg:flex">
           <ul className="menu menu-horizontal px-1text-black md:text-white">
