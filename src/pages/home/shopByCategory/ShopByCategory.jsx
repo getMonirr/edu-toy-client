@@ -4,12 +4,12 @@ import "./ShopByCategory.css";
 
 const ShopByCategory = () => {
   return (
-    <div className="my-32 container mx-auto">
+    <div className="my-16 lg:my-32 container mx-auto">
       <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-2xl lg:text-6xl font-bold font-edu-baloo text-edu-primary capitalize ">
+        <h2 className="text-4xl lg:text-6xl font-bold font-edu-baloo text-edu-primary capitalize ">
           Shop by category
         </h2>
-        <div className="h-2 w-48 bg-edu-secondary mx-auto my-4"></div>
+        <div className=" h-1 lg:h-2 w-48 bg-edu-secondary mx-auto my-4"></div>
         <p>
           Here is our most popular category for education and learning. Most
           kids like these category. just explore your toy

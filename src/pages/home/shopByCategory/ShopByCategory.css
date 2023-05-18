@@ -7,7 +7,7 @@
 }
 
 .react-tabs__tab-list {
-  @apply max-w-3xl w-full mx-auto border-0 flex justify-center items-center;
+  @apply max-w-3xl w-full mx-auto border-0 flex flex-col lg:flex-row gap-4 lg:gap-0 justify-center items-center;
 }
 .react-tabs__tab:focus-visible{
     @apply outline-none

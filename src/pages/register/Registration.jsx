@@ -61,6 +61,7 @@ const Registration = () => {
                 "Please Login with email & password",
                 "success"
               );
+              form.reset();
 
               // log out
               logOut()

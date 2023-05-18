@@ -105,7 +105,7 @@ const Login = () => {
                   </span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="email"
                   className="input input-bordered"
                   required

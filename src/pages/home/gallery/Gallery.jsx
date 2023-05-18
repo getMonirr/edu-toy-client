@@ -24,12 +24,12 @@ const Gallery = () => {
   };
   return (
     <div className="bg-[#EEDFE4]">
-      <div className="container mx-auto py-32 px-2">
+      <div className="container mx-auto py-16 lg:py-32 px-2">
         <div className="text-center max-w-xl mx-auto mb-12">
-          <h2 className="text-2xl lg:text-6xl font-bold font-edu-baloo text-edu-primary capitalize ">
+          <h2 className="text-4xl lg:text-6xl font-bold font-edu-baloo text-edu-primary capitalize ">
             Edu-kit gallery
           </h2>
-          <div className="h-2 w-48 bg-edu-secondary mx-auto my-4"></div>
+          <div className="h-1 lg:h-2 w-48 bg-edu-secondary mx-auto my-4"></div>
           <p>
             Here is our most popular education and learning kid gallery section.{" "}
             <br />
