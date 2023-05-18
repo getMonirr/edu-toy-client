@@ -1,0 +1,14 @@
+.react-tabs__tab {
+  @apply btn rounded-full px-10 mr-4 border-0 bg-[#EEDFE4] text-black hover:bg-[#EEDFE4] hover:text-black;
+}
+
+.react-tabs__tab--selected {
+  @apply bg-edu-primary hover:bg-edu-secondary text-white hover:text-white border-0 focus:ring-0 ring-0;
+}
+
+.react-tabs__tab-list {
+  @apply max-w-3xl w-full mx-auto border-0 flex justify-center items-center;
+}
+.react-tabs__tab:focus-visible{
+    @apply outline-none
+}
