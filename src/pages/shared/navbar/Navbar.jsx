@@ -1,32 +1,49 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../../assets/abacus.png";
+import useAuth from "../../../hooks/useAuth";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
+  // use context
+  const { user } = useAuth();
+
   // nav items
   const navItems = (
     <>
-      <li className=" text-black md:text-white">
+      <li>
         <NavLink className="hover:bg-transparent text-edu-yellow" to="/">
           Home
         </NavLink>
+      </li>
+      <li>
         <NavLink
           className="hover:bg-transparent hover:text-edu-yellow"
           to="/all-toys"
         >
           All Toys
         </NavLink>
-        <NavLink
-          className="hover:bg-transparent hover:text-edu-yellow"
-          to="/my-toys"
-        >
-          My Toys
-        </NavLink>
-        <NavLink
-          className="hover:bg-transparent hover:text-edu-yellow"
-          to="/add-toy"
-        >
-          Add A Toy
-        </NavLink>
+      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              className="hover:bg-transparent hover:text-edu-yellow"
+              to="/my-toys"
+            >
+              My Toys
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="hover:bg-transparent hover:text-edu-yellow"
+              to="/add-toy"
+            >
+              Add A Toy
+            </NavLink>
+          </li>
+        </>
+      )}
+      <li>
         <NavLink
           className="hover:bg-transparent hover:text-edu-yellow"
           to="/blogs"
@@ -34,6 +51,9 @@ const Navbar = () => {
           Blogs
         </NavLink>
       </li>
+      <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 block md:hidden">
+        Sign Out
+      </button>
     </>
   );
 
@@ -41,7 +61,9 @@ const Navbar = () => {
     <div className="bg-edu-nav ">
       <div className="navbar justify-between container mx-auto">
         <div className="navbar-start hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal px-1text-black md:text-white">
+            {navItems}
+          </ul>
         </div>
         <div className="navbar-center">
           <div className="dropdown">
@@ -82,12 +104,37 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <Link
-            to="/login"
-            className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0"
-          >
-            Log in
-          </Link>
+          {user ? (
+            <>
+              {user?.displayName && (
+                <Tooltip
+                  style={{ backgroundColor: "#FDEA45", color: "#B92D5E" }}
+                  anchorSelect=".show-user-name"
+                  place="left"
+                >
+                  {user?.displayName}
+                </Tooltip>
+              )}
+              <label
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar mr-4 hover:bg-edu-secondary"
+              >
+                <div className="w-10 rounded-full show-user-name">
+                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </label>
+              <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 hidden md:block">
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <Link
+              to="/login"
+              className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0"
+            >
+              Sign in
+            </Link>
+          )}
         </div>
       </div>
     </div>
