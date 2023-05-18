@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../../../assets/abacus.png";
 import useAuth from "../../../hooks/useAuth";
 import { Tooltip } from "react-tooltip";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   // use context
@@ -11,10 +12,20 @@ const Navbar = () => {
   const handleUserLogOut = () => {
     logOut()
       .then(() => {
-        console.log("log out");
+        Swal.fire(
+          "Successfully Sign Out",
+          "You Log Out Form Edu-Toy",
+          "success"
+        );
       })
       .catch((err) => {
-        console.log(err.message);
+        if (err.message) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: err?.message ? err?.message : "Something went wrong!",
+          });
+        }
       });
   };
 

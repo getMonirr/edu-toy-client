@@ -1,22 +1,31 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [error, setError] = useState("");
+
   // use context
   const { googleSignIn } = useAuth();
+
+  // navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
 
   // handle google sign in
   const handleGoogleSignIn = () => {
     setError("");
     googleSignIn()
       .then((userCredential) => {
-        console.log(userCredential.user);
+        if (userCredential.user) {
+          Swal.fire("Sign In Successful", "WelCome Back", "success");
+          navigate(from, { replace: true });
+        }
       })
       .catch((err) => {
-        console.log(err.message);
         setError(err.message);
       });
   };
