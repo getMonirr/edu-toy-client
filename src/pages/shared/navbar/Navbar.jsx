@@ -41,6 +41,10 @@ const Navbar = () => {
               Add A Toy
             </NavLink>
           </li>
+
+          <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 block md:hidden">
+            Sign Out
+          </button>
         </>
       )}
       <li>
@@ -51,9 +55,6 @@ const Navbar = () => {
           Blogs
         </NavLink>
       </li>
-      <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 block md:hidden">
-        Sign Out
-      </button>
     </>
   );
 

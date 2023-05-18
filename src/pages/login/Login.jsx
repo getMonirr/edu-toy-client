@@ -1,18 +1,16 @@
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
     <div className="hero min-h-[700px] bg-edu-secondary">
-      <div className="hero-content flex">
+      <div className="hero-content flex flex-col lg:flex-row gap-0">
         <Player
           autoplay
           loop
           src="https://assets1.lottiefiles.com/packages/lf20_dn6rwtwl.json"
-          style={{ height: "500px", width: "500px" }}
-        >
-          <Controls buttons={["play", "repeat", "debug"]} />
-        </Player>
+          style={{ height: "500px", width: "100%" }}
+        ></Player>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-edu-bg">
           <div className="card-body">
             <div>
@@ -62,7 +60,7 @@ const Login = () => {
             <div>
               <p className="text-sm mt-4 text-center">
                 Don’t have an account yet?{" "}
-                <Link to="/sign-in" className="text-edu-nav">
+                <Link to="/registration" className="text-edu-nav">
                   Sign up here
                 </Link>
               </p>
