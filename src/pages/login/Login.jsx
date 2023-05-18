@@ -1,7 +1,26 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  // use context
+  const { googleSignIn } = useAuth();
+
+  // handle google sign in
+  const handleGoogleSignIn = () => {
+    setError("");
+    googleSignIn()
+      .then((userCredential) => {
+        console.log(userCredential.user);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setError(err.message);
+      });
+  };
+
   return (
     <div className="hero min-h-[700px] bg-edu-secondary">
       <div className="hero-content flex flex-col lg:flex-row gap-0">
@@ -15,9 +34,13 @@ const Login = () => {
           <div className="card-body">
             <div>
               <p className="text-2xl font-bold mb-4">Welcome back</p>
+              <p className="text-xl font-bold mb-4 text-red-500">{error}</p>
             </div>
             <div className="mb-4">
-              <button className="capitalize flex justify-center items-center btn bg-edu-bg text-black border-base-300 btn-block gap-4 hover:bg-edu-yellow hover:text-edu-secondary hover:border-base-300 shadow-xl hover:shadow-none">
+              <button
+                onClick={handleGoogleSignIn}
+                className="capitalize flex justify-center items-center btn bg-edu-bg text-black border-base-300 btn-block gap-4 hover:bg-edu-yellow hover:text-edu-secondary hover:border-base-300 shadow-xl hover:shadow-none"
+              >
                 <Player
                   loop
                   autoplay

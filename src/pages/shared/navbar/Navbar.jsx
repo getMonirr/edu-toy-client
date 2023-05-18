@@ -121,7 +121,7 @@ const Navbar = () => {
                 className="btn btn-ghost btn-circle avatar mr-4 hover:bg-edu-secondary"
               >
                 <div className="w-10 rounded-full show-user-name">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <img src={user?.photoURL} />
                 </div>
               </label>
               <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 hidden md:block">
