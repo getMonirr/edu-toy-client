@@ -4,16 +4,18 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-screen bg-edu-primary pb-10 lg:py-6">
+    <div className="hero bg-edu-primary pb-10 lg:py-6">
       <div className=" flex justify-center items-center gap-4 p-4 flex-col lg:flex-row-reverse container w-full">
         {/* <img src={bannerImg} className="lg:max-w-2xl rounded-lg" /> */}
-        <Player
-          autoplay
-          loop
-          src="https://assets7.lottiefiles.com/packages/lf20_Mr2XfXxSpQ.json"
-          //   style={{ height: "800px", width: "800px" }}
-          className="lg:h-[800px] lg:w-[800px]"
-        ></Player>
+        <div className="-z-0">
+          <Player
+            autoplay
+            loop
+            src="https://assets7.lottiefiles.com/packages/lf20_Mr2XfXxSpQ.json"
+            //   style={{ height: "800px", width: "800px" }}
+            className="lg:h-[800px] lg:w-[800px]"
+          ></Player>
+        </div>
         <div>
           <h1 className="text-2xl lg:text-6xl font-bold font-edu-baloo text-edu-yellow">
             Education & Learning <br />
