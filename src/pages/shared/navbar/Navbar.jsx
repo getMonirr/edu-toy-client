@@ -5,7 +5,7 @@ const Navbar = () => {
   // nav items
   const navItems = (
     <>
-      <li className="text-white">
+      <li className=" text-black md:text-white">
         <NavLink className="hover:bg-transparent text-edu-yellow" to="/">
           Home
         </NavLink>
@@ -74,7 +74,7 @@ const Navbar = () => {
           >
             <div className="flex gap-3 items-center justify-center bg-transparent">
               <img className="w-10" src={Logo} alt="logo" />
-              <p className="text-edu-bg text-3xl font-edu-baloo logo-title bg-transparent hover:text-edu-yellow transition">
+              <p className="text-edu-bg text-2xl md:text-3xl font-edu-baloo logo-title bg-transparent hover:text-edu-yellow transition">
                 Edu Toy
               </p>
             </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className="navbar-end">
           <Link
             to="/login"
-            className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition"
+            className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0"
           >
             Log in
           </Link>
