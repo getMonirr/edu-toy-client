@@ -5,7 +5,6 @@ import { Link, useRouteError } from "react-router-dom";
 const Error404 = () => {
   // handle error
   const error = useRouteError();
-  console.log(error);
 
   return (
     <div className="bg-edu-bg min-h-screen">
