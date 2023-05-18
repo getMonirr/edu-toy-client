@@ -7,8 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "edu-font": "Baloo Da 2",
+        "edu-baloo": "'Baloo 2'",
         "edu-pop": "Poppins"
+      },
+      colors: {
+        'edu-primary': "#B92D5E",
+        "edu-secondary": "#AE2455",
+        "edu-yellow": "#FDEA45",
+        "edu-bg": "#FAFAFA",
+        "edu-nav": "#C22F63"
       }
     },
   },
