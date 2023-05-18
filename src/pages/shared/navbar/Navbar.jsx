@@ -5,7 +5,18 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   // use context
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
+
+  // handle user logout
+  const handleUserLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("log out");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   // nav items
   const navItems = (
@@ -42,7 +53,10 @@ const Navbar = () => {
             </NavLink>
           </li>
 
-          <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 block md:hidden">
+          <button
+            onClick={handleUserLogOut}
+            className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 block md:hidden"
+          >
             Sign Out
           </button>
         </>
@@ -124,7 +138,10 @@ const Navbar = () => {
                   <img src={user?.photoURL} />
                 </div>
               </label>
-              <button className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 hidden md:block">
+              <button
+                onClick={handleUserLogOut}
+                className="btn bg-edu-yellow border-0 text-edu-primary hover:bg-edu-yellow hover:text-black transition py-0 hidden md:block"
+              >
                 Sign Out
               </button>
             </>
