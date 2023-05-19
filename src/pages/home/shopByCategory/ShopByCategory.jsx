@@ -8,7 +8,6 @@ const ShopByCategory = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [categories, setCategories] = useState([]);
   const [categoriesToys, setCategoriesToys] = useState([]);
-  console.log(categories[tabIndex]?.category);
 
   // for category
   useEffect(() => {
@@ -27,8 +26,6 @@ const ShopByCategory = () => {
         setCategoriesToys(data);
       });
   }, [tabIndex, categories]);
-
-  console.log(categoriesToys, tabIndex);
 
   return (
     <div className="my-16 lg:my-32 container mx-auto">
