@@ -47,6 +47,29 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
       setUser(loggedUser);
       setLoading(false);
+
+      // generate token
+
+      if (loggedUser) {
+        const userInfo = {
+          email: loggedUser.email,
+        };
+        fetch(`http://localhost:4000/jwt`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.token) {
+              localStorage.setItem("edu-toy-token", data.token);
+            }
+          });
+      } else {
+        localStorage.removeItem("edu-toy-token");
+      }
     });
     return () => {
       unSubscribe();

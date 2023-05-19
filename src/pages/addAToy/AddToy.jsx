@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import { Player } from "@lottiefiles/react-lottie-player";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   // use context
@@ -17,7 +18,13 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        if (result.insertedId) {
+          Swal.fire(
+            "Your toy is added",
+            "see your toy go to my toy page",
+            "success"
+          );
+        }
       });
   };
   return (

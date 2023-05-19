@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import bgimg from "../../assets/bannerImg.jpg";
+import bgImg from "../../assets/bannerImg.jpg";
 import { useState } from "react";
 
 const AllToys = () => {
@@ -26,7 +26,7 @@ const AllToys = () => {
       <div
         className="hero min-h-[200px] lg:min-h-[300px]"
         style={{
-          backgroundImage: `url(${bgimg})`,
+          backgroundImage: `url(${bgImg})`,
         }}
       >
         <div className="hero-overlay bg-opacity-60 bg-[#ffffffe6]"></div>
