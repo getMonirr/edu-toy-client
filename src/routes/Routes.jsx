@@ -7,6 +7,7 @@ import Error404 from "../pages/error/Error404";
 import ToyDetails from "../pages/toyDetails/ToyDetails";
 import PrivateRoute from "./private/PrivateRoute";
 import AddToy from "../pages/addAToy/AddToy";
+import AllToys from "../pages/allToys/AllToys";
 
 const Routes = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const Routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:4000/toys/${params.id}`),
+      },
+      {
+        path: "/all-toys",
+        element: <AllToys />,
+        loader: () => fetch("http://localhost:4000/toys"),
       },
     ],
   },
