@@ -48,11 +48,11 @@ const SingleCategory = ({ toy }) => {
             <span className="font-bold">Price:</span>{" "}
             <span className="text-edu-primary">${price}</span>
           </p>
-          <p className="flex items-center  gap-2">
+          <div className="flex items-center  gap-2">
             <span className="font-bold pt-[2px]">Rating:</span>{" "}
             <Rating value={rating} readOnly style={{ maxWidth: 100 }} />
             <span className="text-[12px] pt-1">{rating} Out of 5</span>
-          </p>
+          </div>
         </div>
         <div className="card-actions justify-between items-center">
           <button

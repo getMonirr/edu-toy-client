@@ -42,17 +42,15 @@ const Gallery = () => {
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
         >
-          {images.map((img) => {
+          {images.map((img, index) => {
             return (
-              <>
-                <a className="grid-flow-row-dense" href={img.imgUrl}>
-                  <img
-                    className="object-fill h-[300px] lg:h-[450px] object-center w-full p-1 bg-edu-nav grayscale hover:grayscale-0 transition"
-                    alt="img1"
-                    src={img.imgUrl}
-                  />
-                </a>
-              </>
+              <a key={index} className="grid-flow-row-dense" href={img.imgUrl}>
+                <img
+                  className="object-fill h-[300px] lg:h-[450px] object-center w-full p-1 bg-edu-nav grayscale hover:grayscale-0 transition"
+                  alt="img1"
+                  src={img.imgUrl}
+                />
+              </a>
             );
           })}
         </LightGallery>
