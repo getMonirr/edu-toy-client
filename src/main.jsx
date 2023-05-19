@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 //css
 import "./index.css";
 import "react-tooltip/dist/react-tooltip.css";
+import '@smastrom/react-rating/style.css'
 
 //component
 import { RouterProvider } from "react-router-dom";
