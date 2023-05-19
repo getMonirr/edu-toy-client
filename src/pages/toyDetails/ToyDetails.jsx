@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 const ToyDetails = () => {
   // use loader data
   const {
-    _id,
     imgUrl,
     name,
     sellerName,
@@ -58,6 +57,12 @@ const ToyDetails = () => {
               <div className="text-lg flex items-center pt-1 gap-2">
                 Rating:{" "}
                 <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
+              </div>
+              <div className="text-sm space-x-4">
+                <p className="badge badge-outline mb-4 lg:mb-0">
+                  Category: {category}
+                </p>
+                <p className="badge badge-outline">Date: {date}</p>
               </div>
             </div>
           </div>

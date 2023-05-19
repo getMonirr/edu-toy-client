@@ -6,6 +6,7 @@ import Registration from "../pages/register/Registration";
 import Error404 from "../pages/error/Error404";
 import ToyDetails from "../pages/toyDetails/ToyDetails";
 import PrivateRoute from "./private/PrivateRoute";
+import AddToy from "../pages/addAToy/AddToy";
 
 const Routes = createBrowserRouter([
   {
@@ -24,6 +25,14 @@ const Routes = createBrowserRouter([
       {
         path: "registration",
         element: <Registration />,
+      },
+      {
+        path: "add-toy",
+        element: (
+          <PrivateRoute>
+            <AddToy />
+          </PrivateRoute>
+        ),
       },
       {
         path: "toys/:id",

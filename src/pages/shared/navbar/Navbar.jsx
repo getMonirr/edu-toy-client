@@ -33,7 +33,7 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <NavLink className="hover:bg-transparent text-edu-yellow" to="/">
+        <NavLink className="hover:bg-transparent" to="/">
           Home
         </NavLink>
       </li>
