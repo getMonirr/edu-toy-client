@@ -19,7 +19,7 @@ const Blogs = () => {
             </div>
             <div className="-mx-4 flex flex-wrap">
               <div className="w-full px-4 lg:w-1/2">
-                <div className="single-faq mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+                <div className="single-faq mb-8 w-full rounded-lg bg-edu-bg shadow-xl p-4 sm:p-8 lg:px-6 xl:px-8">
                   <div className="lg:ml-16">
                     <div className="w-full">
                       <h4 className="text-lg font-semibold text-black">
@@ -37,7 +37,7 @@ const Blogs = () => {
                     </p>
                   </div>
                 </div>
-                <div className="single-faq mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+                <div className="single-faq mb-8 w-full rounded-lg bg-edu-bg shadow-xl p-4 sm:p-8 lg:px-6 xl:px-8">
                   <div className="lg:ml-16">
                     <div className="w-full">
                       <h4 className="text-lg font-semibold text-black">
@@ -56,7 +56,7 @@ const Blogs = () => {
                 </div>
               </div>
               <div className="w-full px-4 lg:w-1/2">
-                <div className="single-faq mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+                <div className="single-faq mb-8 w-full rounded-lg bg-edu-bg shadow-xl p-4 sm:p-8 lg:px-6 xl:px-8">
                   <div className="lg:ml-16">
                     <div className="w-full">
                       <h4 className="text-lg font-semibold text-black">
@@ -73,7 +73,7 @@ const Blogs = () => {
                     </p>
                   </div>
                 </div>
-                <div className="single-faq mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+                <div className="single-faq mb-8 w-full rounded-lg bg-edu-bg shadow-xl p-4 sm:p-8 lg:px-6 xl:px-8">
                   <div className="lg:ml-16">
                     <div className="w-full">
                       <h4 className="text-lg font-semibold text-black">
