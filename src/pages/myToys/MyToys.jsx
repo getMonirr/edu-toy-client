@@ -3,11 +3,16 @@ import useAuth from "../../hooks/useAuth";
 import { Rating } from "@smastrom/react-rating";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import PageDetails from "../shared/pageDetails/PageDetails";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   // use context
   const { user } = useAuth();
   const [toys, setToys] = useState([]);
+
+  // dynamic title
+  useTitle("| My Toys");
 
   // handle toy delete
   const handleToyDelete = (id) => {
@@ -41,6 +46,26 @@ const MyToys = () => {
     });
   };
 
+  // sorting by price
+  const handleSortByPrice = (e) => {
+    const sortBy = e.target.value;
+    fetch(
+      `http://localhost:4000/sort-my-toys?email=${user?.email}&sort=${sortBy}`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+      });
+  };
+
+  // fetch user's toys
   useEffect(() => {
     fetch(`http://localhost:4000/my-toys?email=${user?.email}`, {
       method: "GET",
@@ -57,6 +82,7 @@ const MyToys = () => {
 
   return (
     <div className="container mx-auto mb-32">
+      <PageDetails title={"My toy page"} />
       <div className="overflow-x-auto w-full">
         <div className="text-center my-16">
           <h1 className=" text-4xl font-black uppercase text-edu-primary font-edu-baloo text-center">
@@ -64,6 +90,20 @@ const MyToys = () => {
           </h1>
           <div className="h-1 lg:h-2 w-48 bg-edu-secondary mx-auto my-4"></div>
           <p>You can modify,update and delete your toy</p>
+        </div>
+        <div className="text-end mb-4">
+          <select
+            className="border-edu-primary focus:ring-0 focus:outline-none focus:border-edu-primary"
+            name="sort"
+            id=""
+            onChange={handleSortByPrice}
+          >
+            <option disabled selected>
+              Sort By Price
+            </option>
+            <option value="low">Low to high</option>
+            <option value="high">High to low</option>
+          </select>
         </div>
         <table className="table w-full">
           {/* head */}

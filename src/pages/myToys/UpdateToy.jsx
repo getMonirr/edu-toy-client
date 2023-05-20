@@ -4,10 +4,14 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
   const [toy, setToy] = useState({});
   const { price, quantity, detailsDescription } = toy;
+
+  // dynamic title
+  useTitle("| Update Toy");
 
   // use context
   const { user } = useAuth();

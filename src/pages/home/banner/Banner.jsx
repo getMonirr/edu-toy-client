@@ -16,7 +16,7 @@ const Banner = () => {
             className="lg:h-[800px] lg:w-[800px]"
           ></Player>
         </div>
-        <div>
+        <div data-aos="fade-right" data-aos-delay="800">
           <h1 className="text-2xl lg:text-6xl font-bold font-edu-baloo text-edu-yellow">
             Education & Learning <br />
             <span className="text-6xl lg:text-9xl text-edu-bg font-black">

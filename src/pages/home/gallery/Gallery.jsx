@@ -37,16 +37,22 @@ const Gallery = () => {
           </p>
         </div>
         <LightGallery
-          elementClassNames="grid grid-cols-1 lg:grid-cols-3 gap-8 grid-flow-row-dense"
+          elementClassNames="grid grid-cols-1 lg:grid-cols-4 gap-8 grid-flow-row-dense"
           onInit={onInit}
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
         >
           {images.map((img, index) => {
             return (
-              <a key={index} className="grid-flow-row-dense" href={img.imgUrl}>
+              <a
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                key={index}
+                className="grid-flow-row-dense"
+                href={img.imgUrl}
+              >
                 <img
-                  className="object-fill h-[300px] lg:h-[450px] object-center w-full p-1 bg-edu-nav grayscale hover:grayscale-0 transition"
+                  className="object-fill h-[300px] lg:h-[400px] object-center w-full p-1 bg-edu-nav grayscale hover:grayscale-0 transition"
                   alt="img1"
                   src={img.imgUrl}
                 />
