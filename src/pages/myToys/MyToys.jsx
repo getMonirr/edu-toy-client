@@ -153,7 +153,7 @@ const MyToys = () => {
                   <td>${toy?.price}</td>
                   <td>{toy?.quantity}</td>
                   <td>{toy?.sellerEmail}</td>
-                  <td>{toy?.sellerName}</td>
+                  <td>{toy?.sellerName || "Not Found"}</td>
                   <td>
                     <div className="flex items-center">
                       <Link

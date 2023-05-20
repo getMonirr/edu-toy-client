@@ -31,7 +31,7 @@ const AllToys = () => {
           <input
             onChange={handleSearchByName}
             type="text"
-            placeholder="Search…"
+            placeholder="Search… By Toy name"
             className="input input-bordered rounded-lg rounded-tr-none rounded-br-none w-full rounded-tl-3xl rounded-bl-3xl text-edu-primary focus:ring-0 focus:outline-none focus:border-edu-primary"
           />
           <button className="btn rounded-bl-none rounded-tl-none rounded-lg bg-edu-primary hover:bg-edu-nav text-edu-bg border-edu-primary py-4 px-9 rounded-br-3xl rounded-tr-3xl">
@@ -73,7 +73,7 @@ const AllToys = () => {
                     <td>{toy?.category}</td>
                     <td>${toy?.price}</td>
                     <td>{toy?.quantity}</td>
-                    <td>{toy?.sellerName}</td>
+                    <td>{toy?.sellerName || "Not Found"}</td>
                     <td>
                       <Link
                         to={`/toys/${toy._id}`}

@@ -15,7 +15,7 @@ const PageDetails = ({ title, children }) => {
     >
       <div className="hero-overlay bg-opacity-60 bg-[#ffffffe6]"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="lg:max-w-md">
+        <div className="">
           <h1 className="mb-5 text-4xl lg:text-6xl font-bold text-black font-edu-baloo ">
             {title}
           </h1>
