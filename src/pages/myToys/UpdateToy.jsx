@@ -25,14 +25,17 @@ const UpdateToy = () => {
     data.price = data.price || price;
     data.detailsDescription = data.detailsDescription || detailsDescription;
 
-    fetch(`http://localhost:4000/my-toys/${id}?email=${user?.email}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://edu-toy-server.vercel.app/my-toys/${id}?email=${user?.email}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
@@ -48,13 +51,16 @@ const UpdateToy = () => {
 
   // fetch data
   useEffect(() => {
-    fetch(`http://localhost:4000/my-toys/${id}?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
-      },
-    })
+    fetch(
+      `https://edu-toy-server.vercel.app/my-toys/${id}?email=${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setToy(data);

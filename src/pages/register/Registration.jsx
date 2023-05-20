@@ -98,7 +98,7 @@ const Registration = () => {
             <form className="space-y-4" onSubmit={handleCreateUser}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name </span>
+                  <span className="label-text">Name (optional) </span>
                 </label>
                 <input
                   type="text"

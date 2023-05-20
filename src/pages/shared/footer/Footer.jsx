@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div>
       <div className="bg-edu-bg">
-        <footer className="footer p-10 text-base-content container mx-auto">
+        <footer className="footer p-10 text-base-content container mx-auto py-20">
           <div>
             <span className="footer-title">Office Address</span>
             <p>Level-8, 43, Banani, Dhaka</p>
@@ -53,7 +53,7 @@ const Footer = () => {
         </footer>
       </div>
       <div>
-        <footer className="footer footer-center p-10 bg-base-200">
+        <footer className="footer footer-center p-10 bg-slate-600 text-edu-bg py-30">
           <div>
             <div>
               <Link

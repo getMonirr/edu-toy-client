@@ -11,7 +11,7 @@ const ShopByCategory = () => {
 
   // for category
   useEffect(() => {
-    fetch("http://localhost:4000/categories")
+    fetch("https://edu-toy-server.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
@@ -20,7 +20,9 @@ const ShopByCategory = () => {
 
   // load data for specific category
   useEffect(() => {
-    fetch(`http://localhost:4000/categories/${categories[tabIndex]?.category}`)
+    fetch(
+      `https://edu-toy-server.vercel.app/categories/${categories[tabIndex]?.category.split(' ').join('-')}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCategoriesToys(data);

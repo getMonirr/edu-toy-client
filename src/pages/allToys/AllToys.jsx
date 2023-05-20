@@ -14,11 +14,11 @@ const AllToys = () => {
     const searchText = e.target.value;
 
     if (searchText) {
-      fetch(`http://localhost:4000/search?name=${searchText}`)
+      fetch(`https://edu-toy-server.vercel.app/search?name=${searchText}`)
         .then((res) => res.json())
         .then((data) => setToys(data));
     } else {
-      fetch(`http://localhost:4000/toys`)
+      fetch(`https://edu-toy-server.vercel.app/toys`)
         .then((res) => res.json())
         .then((data) => setToys(data));
     }

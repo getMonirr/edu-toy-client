@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
         const userInfo = {
           email: loggedUser.email,
         };
-        fetch(`http://localhost:4000/jwt`, {
+        fetch(`https://edu-toy-server.vercel.app/jwt`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

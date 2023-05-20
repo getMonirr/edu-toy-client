@@ -10,11 +10,11 @@ const AddToy = () => {
   const { user } = useAuth();
 
   // use dynamic title
-  useTitle('| Add Toys')
+  useTitle("| Add Toys");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    fetch(`http://localhost:4000/toys`, {
+    fetch(`https://edu-toy-server.vercel.app/toys`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -188,6 +188,8 @@ const AddToy = () => {
                       name="rating"
                       id="rating"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      min="1"
+                      max="5"
                     />
                   </div>
                 </div>

@@ -14,7 +14,7 @@ const Gallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/images`)
+    fetch(`https://edu-toy-server.vercel.app/images`)
       .then((res) => res.json())
       .then((data) => {
         setImages(data);

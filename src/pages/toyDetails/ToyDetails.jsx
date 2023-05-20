@@ -17,6 +17,13 @@ const ToyDetails = () => {
   } = useLoaderData();
   return (
     <div className="container mx-auto my-16 p-0">
+      <div className="text-center my-16">
+        <h1 className=" text-4xl font-black uppercase text-edu-primary font-edu-baloo text-center">
+          {`Details of ${name}`}
+        </h1>
+        <div className="h-1 lg:h-2 w-48 bg-edu-secondary mx-auto my-4"></div>
+        <p>You can see our toy Details</p>
+      </div>
       <div className="card lg:card-side bg-base-100 shadow-xl mx-auto lg:w-3/4 px-2 lg:px-0">
         <figure>
           <img src={imgUrl} alt="Album" />

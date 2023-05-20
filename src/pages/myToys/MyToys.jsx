@@ -27,13 +27,16 @@ const MyToys = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete toy
-        fetch(`http://localhost:4000/my-toys/${id}?email=${user?.email}`, {
-          method: "DELETE",
-          headers: {
-            "content-type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
-          },
-        })
+        fetch(
+          `https://edu-toy-server.vercel.app/my-toys/${id}?email=${user?.email}`,
+          {
+            method: "DELETE",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("edu-toy-token")}`,
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
@@ -50,7 +53,7 @@ const MyToys = () => {
   const handleSortByPrice = (e) => {
     const sortBy = e.target.value;
     fetch(
-      `http://localhost:4000/sort-my-toys?email=${user?.email}&sort=${sortBy}`,
+      `https://edu-toy-server.vercel.app/sort-my-toys?email=${user?.email}&sort=${sortBy}`,
       {
         method: "GET",
         headers: {
@@ -67,7 +70,7 @@ const MyToys = () => {
 
   // fetch user's toys
   useEffect(() => {
-    fetch(`http://localhost:4000/my-toys?email=${user?.email}`, {
+    fetch(`https://edu-toy-server.vercel.app/my-toys?email=${user?.email}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

@@ -46,12 +46,12 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/toys/${params.id}`),
+          fetch(`https://edu-toy-server.vercel.app/toys/${params.id}`),
       },
       {
         path: "/all-toys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:4000/toys"),
+        loader: () => fetch("https://edu-toy-server.vercel.app/toys"),
       },
       {
         path: "my-toys",
