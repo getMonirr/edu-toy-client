@@ -20,6 +20,7 @@ const Gallery = () => {
         setImages(data);
       });
   }, []);
+  console.log(images);
 
   const onInit = () => {};
   return (

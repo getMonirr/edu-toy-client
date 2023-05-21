@@ -1,6 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 // import bannerImg from "../../../assets/bannerCube.png";
 import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -28,9 +29,9 @@ const Banner = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className=" rounded-full bg-edu-yellow text-edu-secondary px-6 py-3 mx-auto lg:mx-0 lg:px-12 lg:py-5 text-2xl font-medium hover:text-black transition flex justify-center items-center gap-4 lg:my-7">
+         <Link to={"/all-toys"}> <button className=" rounded-full bg-edu-yellow text-edu-secondary px-6 py-3 mx-auto lg:mx-0 lg:px-12 lg:py-5 text-2xl font-medium hover:text-black transition flex justify-center items-center gap-4 lg:my-7">
             <BsArrowRight /> Get Your Toys
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>
