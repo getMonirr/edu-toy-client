@@ -63,7 +63,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "update-toys/:id",
-        element: <UpdateToy />,
+        element: (
+          <PrivateRoute>
+            <UpdateToy />
+          </PrivateRoute>
+        ),
       },
       {
         path: "blogs",

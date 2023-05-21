@@ -50,33 +50,38 @@ const Registration = () => {
 
     // create user
     if (isPass && email) {
-      createUser(email, password).then((userCredential) => {
-        const newUser = userCredential.user;
-        if (newUser) {
-          updateProfile(newUser, { displayName: name, photoURL: photoUrl })
-            .then(() => {
-              // show success message
-              Swal.fire(
-                "Registration Successful",
-                "Please Login with email & password",
-                "success"
-              );
-              form.reset();
+      createUser(email, password)
+        .then((userCredential) => {
+          const newUser = userCredential.user;
+          if (newUser) {
+            updateProfile(newUser, { displayName: name, photoURL: photoUrl })
+              .then(() => {
+                // show success message
+                Swal.fire(
+                  "Registration Successful",
+                  "Please Login with email & password",
+                  "success"
+                );
+                form.reset();
 
-              // log out
-              logOut()
-                .then()
-                .catch((err) => setError(err?.message));
+                // log out
+                logOut()
+                  .then()
+                  .catch((err) => setError(err?.message));
 
-              // user navigate to log in page
-              navigate("/login");
-            })
-            .catch((err) => {
-              setError(err?.message);
-              setIsRegBtnDisable(false);
-            });
-        }
-      });
+                // user navigate to log in page
+                navigate("/login");
+              })
+              .catch((err) => {
+                setError(err?.message);
+                setIsRegBtnDisable(false);
+              });
+          }
+        })
+        .catch((err) => {
+          setError(err?.message);
+          setIsRegBtnDisable(false);
+        });
     }
   };
 
