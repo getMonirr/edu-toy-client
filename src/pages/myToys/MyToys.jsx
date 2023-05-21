@@ -44,6 +44,13 @@ const MyToys = () => {
               setToys(rest);
               Swal.fire("Deleted!", "Your toy has been deleted.", "success");
             }
+          })
+          .catch((err) => {
+            Swal.fire({
+              icon: "error",
+              title: `Oops... ${err?.message}`,
+              text: "Something went wrong!",
+            });
           });
       }
     });
@@ -65,6 +72,13 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   };
 
@@ -80,6 +94,13 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   }, [user]);
 

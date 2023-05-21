@@ -32,6 +32,13 @@ const AddToy = () => {
             "success"
           );
         }
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   };
   return (

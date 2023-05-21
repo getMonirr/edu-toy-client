@@ -3,6 +3,7 @@ import "react-tabs/style/react-tabs.css";
 import "./ShopByCategory.css";
 import { useEffect, useState } from "react";
 import SingleCategory from "./SingleCategory";
+import Swal from "sweetalert2";
 
 const ShopByCategory = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -15,17 +16,35 @@ const ShopByCategory = () => {
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   }, []);
 
   // load data for specific category
   useEffect(() => {
     fetch(
-      `https://edu-toy-server.vercel.app/categories/${categories[tabIndex]?.category.split(' ').join('-')}`
+      `https://edu-toy-server.vercel.app/categories/${categories[
+        tabIndex
+      ]?.category
+        .split(" ")
+        .join("-")}`
     )
       .then((res) => res.json())
       .then((data) => {
         setCategoriesToys(data);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   }, [tabIndex, categories]);
 

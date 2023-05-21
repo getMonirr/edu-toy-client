@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import PageDetails from "../shared/pageDetails/PageDetails";
 import useTitle from "../../hooks/useTitle";
+import Swal from "sweetalert2";
 
 const AllToys = () => {
   const loadedToys = useLoaderData();
@@ -16,11 +17,25 @@ const AllToys = () => {
     if (searchText) {
       fetch(`https://edu-toy-server.vercel.app/search?name=${searchText}`)
         .then((res) => res.json())
-        .then((data) => setToys(data));
+        .then((data) => setToys(data))
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: `Oops... ${err?.message}`,
+            text: "Something went wrong!",
+          });
+        });
     } else {
       fetch(`https://edu-toy-server.vercel.app/toys`)
         .then((res) => res.json())
-        .then((data) => setToys(data));
+        .then((data) => setToys(data))
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: `Oops... ${err?.message}`,
+            text: "Something went wrong!",
+          });
+        });
     }
   };
 

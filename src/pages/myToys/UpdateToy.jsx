@@ -3,7 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
@@ -18,6 +18,7 @@ const UpdateToy = () => {
 
   // get id
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -39,12 +40,16 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.modifiedCount) {
-          Swal.fire(
-            "Your toy is updated",
-            "see your toy go to my toy page",
-            "success"
-          );
+          Swal.fire("Your toy is updated", "see your updated toys", "success");
+          navigate("/my-toys");
         }
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   };
 
@@ -63,6 +68,13 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         setToy(data);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `Oops... ${err?.message}`,
+          text: "Something went wrong!",
+        });
       });
   }, []);
 

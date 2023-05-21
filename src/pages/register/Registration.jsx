@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const Registration = () => {
   const [error, setError] = useState("");
   const [isRegBtnDisable, setIsRegBtnDisable] = useState(false);
+  const [isShow, setIsShow] = useState(false);
 
   // use context
   const { createUser, logOut } = useAuth();
@@ -85,6 +86,11 @@ const Registration = () => {
     }
   };
 
+  // handle show password
+  const handleShowPassword = () => {
+    setIsShow(!isShow);
+  };
+
   return (
     <div className="hero min-h-[700px] bg-edu-secondary py-12">
       <div className="hero-content flex flex-col md:flex-row">
@@ -133,16 +139,29 @@ const Registration = () => {
                   </span>
                 </label>
                 <input
-                  type="password"
+                  type={`${isShow ? "text" : "password"}`}
                   placeholder="password"
                   className="input input-bordered"
                   required
                   name="password"
                 />
+                <div className="form-control">
+                  <label className="label cursor-pointer justify-start gap-3">
+                    <input
+                      type="checkbox"
+                      onClick={handleShowPassword}
+                      className="checkbox"
+                    />
+                    <span className="label-text">Show Password</span>
+                  </label>
+                </div>
                 <label className="label">
                   <span className="label-text text-[12px]">
                     Minimum eight characters, at least one letter, one number
-                    and one special character{" "}
+                    and one special character.{" "}
+                    <span className="text-red-500">
+                      (do not include dot(.) in your password)
+                    </span>
                     <span className="text-red-500">*</span>
                   </span>
                 </label>
