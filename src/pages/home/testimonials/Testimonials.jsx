@@ -20,7 +20,7 @@ const Testimonials = () => {
 
   // fake feedback data
   useEffect(() => {
-    fetch("/feedback.json")
+    fetch("https://edu-toy-server.vercel.app/feedbacks")
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data);
