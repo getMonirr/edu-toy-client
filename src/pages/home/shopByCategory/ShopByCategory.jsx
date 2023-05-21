@@ -6,32 +6,32 @@ import SingleCategory from "./SingleCategory";
 
 const ShopByCategory = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   const [categoriesToys, setCategoriesToys] = useState([]);
 
   // for category
-  useEffect(() => {
-    fetch("https://edu-toy-server.vercel.app/categories")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://edu-toy-server.vercel.app/categories")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setCategories(data);
+  //     });
+  // }, []);
+
+  const categories = ["Math Toys", "Science Toys", "Language Toys"];
 
   // load data for specific category
   useEffect(() => {
     fetch(
-      `https://edu-toy-server.vercel.app/categories/${categories[
-        tabIndex
-      ]?.category
-        .split(" ")
+      `https://edu-toy-server.vercel.app/categories/${categories[tabIndex]
+        ?.split(" ")
         .join("-")}`
     )
       .then((res) => res.json())
       .then((data) => {
         setCategoriesToys(data);
       });
-  }, [tabIndex, categories]);
+  }, [tabIndex]);
 
   return (
     <div className="my-16 lg:my-32 container mx-auto">
@@ -48,8 +48,8 @@ const ShopByCategory = () => {
       <div className="my-16">
         <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList>
-            {categories.map((cat, i) => (
-              <Tab key={i}>{cat.category}</Tab>
+            {categories.map((cat, index) => (
+              <Tab key={index}>{cat}</Tab>
             ))}
           </TabList>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 my-16">

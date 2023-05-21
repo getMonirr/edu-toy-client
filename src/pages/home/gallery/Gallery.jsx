@@ -18,9 +18,8 @@ const Gallery = () => {
       .then((res) => res.json())
       .then((data) => {
         setImages(data);
-      })
+      });
   }, []);
-  console.log(images);
 
   const onInit = () => {};
   return (
