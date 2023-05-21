@@ -65,9 +65,9 @@ const AllToys = () => {
           <p>You can find your toy</p>
         </div>
         <div className="overflow-x-auto">
-          <table className="table table-zebra w-full mb-32">
+          <table className="table table-zebra w-full mb-32 text-center">
             {/* head */}
-            <thead>
+            <thead className="font-edu-baloo">
               <tr>
                 <th>No</th>
                 <th>Toy Name</th>

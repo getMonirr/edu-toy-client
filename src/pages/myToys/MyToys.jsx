@@ -142,6 +142,7 @@ const MyToys = () => {
               <th>Seller Email</th>
               <th>Seller Name</th>
               <th>Action</th>
+              <th>View Details</th>
             </tr>
           </thead>
           <tbody>
@@ -190,6 +191,14 @@ const MyToys = () => {
                         Delete
                       </button>
                     </div>
+                  </td>
+                  <td>
+                    <Link
+                      to={`/toys/${toy._id}`}
+                      className="btn btn-primary bg-edu-primary hover:bg-edu-nav border-edu-primary hover:border-edu-primary"
+                    >
+                      View Details
+                    </Link>
                   </td>
                 </tr>
               ))

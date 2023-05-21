@@ -2,8 +2,6 @@
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-
 }
 
 .swiper-slide img {
@@ -24,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #B92D5E;
+  color: #fdea45;
 }
 
 .autoplay-progress svg {
@@ -36,17 +34,22 @@
   width: 100%;
   height: 100%;
   stroke-width: 4px;
-  stroke: #B92D5E;
+  stroke: #fdea45;
   fill: none;
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
 
-.swiper-button-next:after, .swiper-button-prev:after{
-    @apply text-edu-primary
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  @apply text-edu-primary text-3xl font-black rounded-full;
 }
 
-.swiper-pagination{
-    @apply -mt-20
+.swiper-pagination {
+  @apply -mt-20;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  @apply bg-edu-yellow p-6 rounded-full shadow-2xl;
 }
