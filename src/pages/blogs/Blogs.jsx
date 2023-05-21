@@ -66,10 +66,10 @@ const Blogs = () => {
                       </span>
                       Access tokens and refresh tokens should be stored securely
                       on the client-side. Recommended options are HTTP-only
-                      cookies or browser's local storage. These methods offer
+                      cookies or browsers local storage. These methods offer
                       built-in security measures, protecting tokens from
                       unauthorized access. Storing tokens in memory variables is
-                      discouraged. It's crucial to follow security best
+                      discouraged. Its crucial to follow security best
                       practices and choose storage methods that adequately
                       safeguard the tokens.{" "}
                     </p>

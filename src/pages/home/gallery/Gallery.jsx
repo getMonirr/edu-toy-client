@@ -9,7 +9,6 @@ import "lightgallery/css/lg-thumbnail.css";
 // import plugins if you need
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
-import Swal from "sweetalert2";
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -20,13 +19,6 @@ const Gallery = () => {
       .then((data) => {
         setImages(data);
       })
-      .catch((err) => {
-        Swal.fire({
-          icon: "error",
-          title: `Oops... ${err?.message}`,
-          text: "Something went wrong!",
-        });
-      });
   }, []);
   console.log(images);
 

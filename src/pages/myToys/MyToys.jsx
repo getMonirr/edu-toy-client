@@ -77,7 +77,7 @@ const MyToys = () => {
         Swal.fire({
           icon: "error",
           title: `Oops... ${err?.message}`,
-          text: "Something went wrong!",
+          text: "Something went wrong! server problem: failed to fetch",
         });
       });
   };
@@ -99,7 +99,7 @@ const MyToys = () => {
         Swal.fire({
           icon: "error",
           title: `Oops... ${err?.message}`,
-          text: "Something went wrong!",
+          text: "Something went wrong! server problem: failed to fetch",
         });
       });
   }, [user]);
