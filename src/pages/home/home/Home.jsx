@@ -3,6 +3,7 @@ import Banner from "../banner/Banner";
 import ContactUs from "../contactUs/ContactUs";
 import Gallery from "../gallery/Gallery";
 import ShopByCategory from "../shopByCategory/ShopByCategory";
+import Step from "../step/Step";
 import Testimonials from "../testimonials/Testimonials";
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner />
       <Gallery />
       <ShopByCategory />
+      <Step />
       <Testimonials />
       <ContactUs />
     </div>

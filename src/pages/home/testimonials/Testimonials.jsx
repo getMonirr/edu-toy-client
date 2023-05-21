@@ -33,7 +33,7 @@ const Testimonials = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div className="bg-[#EEDFE4] py-16 lg:py-32 px-8">
+    <div className="bg-[#EBE4CB] py-16 lg:py-32 px-8">
       <div className="text-neutral-700 dark:text-neutral-300 container mx-auto">
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold font-edu-baloo text-edu-primary capitalize ">

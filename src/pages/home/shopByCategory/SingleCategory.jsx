@@ -37,9 +37,9 @@ const SingleCategory = ({ toy }) => {
 
   const { _id, imgUrl, category, name, rating, price } = toy;
   return (
-    <div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl px-3">
+    <div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl px-3 lg:px-0">
       <figure>
-        <img className="h-[300px] object-cover object-center w-full" src={imgUrl} alt={name} />
+        <img className="h-[300px] object-fill object-center w-full" src={imgUrl} alt={name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title font-edu-baloo text-2xl">{name}</h2>

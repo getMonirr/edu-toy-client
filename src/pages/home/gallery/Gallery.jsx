@@ -23,7 +23,7 @@ const Gallery = () => {
 
   const onInit = () => {};
   return (
-    <div className="bg-[#EEDFE4]">
+    <div className="bg-[#D6DFE7]">
       <div className="container mx-auto py-16 lg:py-32 px-2">
         <div className="text-center max-w-xl mx-auto mb-12">
           <h2 className="text-4xl lg:text-6xl font-bold font-edu-baloo text-edu-primary capitalize ">
@@ -52,7 +52,7 @@ const Gallery = () => {
                 href={img.imgUrl}
               >
                 <img
-                  className="object-fill h-[300px] lg:h-[400px] object-center w-full p-1 bg-edu-nav grayscale hover:grayscale-0 transition"
+                  className="object-fill h-[300px] lg:h-[400px] object-center w-full p-1 bg-edu-nav grayscale hover:grayscale-0 transition rounded-xl"
                   alt="img1"
                   src={img.imgUrl}
                 />
