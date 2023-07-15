@@ -38,3 +38,9 @@
 
 ## live website link
 https://edu-toy.web.app/
+
+## How to run Locally
+1. Clone Repo
+2. Go to the folder
+3. npm i
+4. npm run dev
